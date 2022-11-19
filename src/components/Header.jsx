@@ -1,9 +1,11 @@
 const Header = ({ allNotifications, setAllNotifications }) => {
     const getUnreadNotifications = () => (
+        // Only gets the notifications that have the key 'read' equal to false
         allNotifications.filter((notification) => !notification.read)
     )
 
     const handleMarkAllAsRead = () => {
+        // Go through all the notifications and mark each one as 'read'
         const allNotificationsRead = allNotifications.map((notification) => {
             return {
                 ...notification,

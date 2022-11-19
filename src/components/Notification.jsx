@@ -4,10 +4,12 @@ const Notification = ({ notification, allNotifications, setAllNotifications }) =
     const { id, author, profilePicSrc, actionMessage, postOrGroup, timeAgo, privateMessage, postPicSrc, read } = notification
 
     const handleClickNotification = () => {
+        // If the notification was already read, then there is no need to do anything else
         if (read) {
             return
         }
 
+        // If the notification has not been read, find it inside of the notifications array and set it to 'read'
         const updatedNotifications = allNotifications.map((notification) => {
             if (notification.id === id) {
                 notification.read = true
