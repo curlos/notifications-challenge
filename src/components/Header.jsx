@@ -3,6 +3,17 @@ const Header = ({ allNotifications, setAllNotifications }) => {
         allNotifications.filter((notification) => !notification.read)
     )
 
+    const handleMarkAllAsRead = () => {
+        const allNotificationsRead = allNotifications.map((notification) => {
+            return {
+                ...notification,
+                read: true
+            }
+        })
+
+        setAllNotifications([...allNotificationsRead])
+    }
+
     return (
         <header>
             <div className="left">
@@ -11,7 +22,7 @@ const Header = ({ allNotifications, setAllNotifications }) => {
             </div>
 
             <div>
-                <button className="markAllAsRead">Mark all as read</button>
+                <button className="markAllAsRead" onClick={handleMarkAllAsRead}>Mark all as read</button>
             </div>
         </header>
     )

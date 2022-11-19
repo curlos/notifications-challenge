@@ -17,7 +17,11 @@
 
 .mainContainer {
     font-family: 'Plus Jakarta Sans';
-    margin: 25px;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
 }
 
 header {
@@ -60,15 +64,27 @@ header .markAllAsRead {
 .boldText {
     font-weight: 800;
     color: #1C202B;
+    cursor: pointer;
+}
+
+.boldText:active,
+.markAllAsRead:active {
+    color: #0A327B;
 }
 
 .notificationWrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
     color: #5E6778;
     border-radius: 10px;
     padding: 20px;
+}
+
+.notificationInnerWrapper {
+    display: flex;
+    gap: 20px;
 }
 
 .profilePic,
@@ -76,6 +92,7 @@ header .markAllAsRead {
     height: 45px;
     width: 45px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .postPic {
@@ -84,22 +101,46 @@ header .markAllAsRead {
 
 .unreadNotification {
     background-color: #F7FAFD;
+    cursor: pointer;
 }
 
-.notificationMessage {
-    display: flex;
-    align-items: center;
-    gap: 7px;
+.actionMessage {
+    margin: 0px 3px;
 }
 
 .unreadDot {
+    display: inline-block;
     height: 8px;
     width: 8px;
     background-color: #F65552;
     border-radius: 50%;
+    margin-left: 5px;
+}
+
+.notificationDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
 
 .timeAgo {
     color: #939CAD;
+}
+
+.notificationList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.privateMessageWrapper {
+    border: 1px solid #DDE7EE;
+    border-radius: 10px;
+    padding: 20px;
     margin-top: 5px;
+    cursor: pointer;
+}
+
+.privateMessageWrapper:active {
+    background-color: #E5EFFA;
 }

@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Notification from './Notification';
 
 const NotificationList = ({ allNotifications, setAllNotifications }) => {
-
-
     return (
-        <div>
-            {allNotifications.map((i, notification) => (
-                <Notification key={i} notification={notification} />
+        <div className="notificationList">
+            {allNotifications.map((notification) => (
+                <Notification key={notification.id} notification={notification} allNotifications={allNotifications} setAllNotifications={setAllNotifications} />
             ))}
         </div>
     )

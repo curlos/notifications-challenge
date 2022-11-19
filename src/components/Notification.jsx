@@ -1,25 +1,54 @@
 import React, { useState } from 'react'
 
-const Notification = ({ notification }) => {
-    const { author, actionMessage, postOrGroup, timeAgo, privateMessage, picture, read } = notification
+const Notification = ({ notification, allNotifications, setAllNotifications }) => {
+    const { id, author, profilePicSrc, actionMessage, postOrGroup, timeAgo, privateMessage, postPicSrc, read } = notification
+
+    const handleClickNotification = () => {
+        if (read) {
+            return
+        }
+
+        const updatedNotifications = allNotifications.map((notification) => {
+            if (notification.id === id) {
+                notification.read = true
+            }
+
+            return notification
+        })
+
+        setAllNotifications([...updatedNotifications])
+    }
 
     return (
-        <div className={`notificationWrapper` + `${!read ? ' unreadNotification' : ''}`}>
-            <img src="/assets/images/avatar-mark-webber.webp" alt="Mark Webber" className="profilePic" />
+        <div onClick={handleClickNotification} className={`notificationWrapper` + `${!read ? ' unreadNotification' : ''}`}>
+            <div className="notificationInnerWrapper">
+                <img src={profilePicSrc} alt={author} className="profilePic" />
 
-            <div>
-                <div className="notificationMessage">
-                    <span className="boldText">Mark Webber</span>
+                <div className="notificationDetails">
+                    <div className="notificationMessage">
+                        <span>
+                            <span className="boldText">{author}</span>
+                            <span className="actionMessage"> {actionMessage} </span>
+                            {postOrGroup ? <span className="boldText">{postOrGroup}</span> : ''}
+                        </span>
+                        <span className={'hidden' + ` ${!read ? 'unreadDot' : ''}`}></span>
+                    </div>
 
-                    <span>reacted to your recent post</span>
+                    <div className="timeAgo">{timeAgo}</div>
 
-                    <span className="boldText">My first tournament today!</span>
-
-                    <span className={'hidden' + ` ${!read ? 'unreadDot' : ''}`}></span>
+                    {privateMessage ? (
+                        <div className="privateMessageWrapper">
+                            {privateMessage}
+                        </div>
+                    ) : ''}
                 </div>
-
-                <div className="timeAgo">1m ago</div>
             </div>
+
+            {postPicSrc ? (
+                <div>
+                    <img src={postPicSrc} alt="" className="postPic" />
+                </div>
+            ) : ''}
         </div>
     )
 }
