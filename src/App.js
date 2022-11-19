@@ -10,9 +10,11 @@ const App = () => {
   const [allNotifications, setAllNotifications] = useState([...baseNotifications])
 
   return (
-    <div className="mainContainer">
-      <Header allNotifications={allNotifications} setAllNotifications={setAllNotifications} />
-      <NotificationList allNotifications={allNotifications} setAllNotifications={setAllNotifications} />
+    <div className="outerMainContainer">
+      <div className="mainContainer">
+        <Header allNotifications={allNotifications} setAllNotifications={setAllNotifications} />
+        <NotificationList allNotifications={allNotifications} setAllNotifications={setAllNotifications} />
+      </div>
     </div>
   );
 }
