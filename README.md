@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/react-notifications-challenge-solution-loAPRCnRIL](https://www.frontendmentor.io/solutions/react-notifications-challenge-solution-loAPRCnRIL)
+- Live Site URL: [https://notifications-challenge.vercel.app/](https://notifications-challenge.vercel.app/)
 
 ## My process
 
