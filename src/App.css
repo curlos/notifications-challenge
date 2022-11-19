@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/public/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/public/assets/fonts/static/PlusJakartaSans-Medium.ttf');
+    font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/public/assets/fonts/static/PlusJakartaSans-ExtraBold.ttf');
+    font-weight: 800;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mainContainer {
+    font-family: 'Plus Jakarta Sans';
+    margin: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    font-family: 'Plus Jakarta Sans';
+}
+
+header .boldText {
+    font-size: 24px;
+}
+
+header .markAllAsRead {
+    font-size: 16px;
+    color: #5E6778;
+    cursor: pointer;
+}
+
+.unreadNotificationNumber {
+    background-color: #0A327B;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-weight: 800;
+    padding: 5px 10px;
+}
+
+.boldText {
+    font-weight: 800;
+    color: #1C202B;
+}
+
+.notificationWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #5E6778;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.profilePic,
+.postPic {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+.postPic {
+    border-radius: 10px;
+}
+
+.unreadNotification {
+    background-color: #F7FAFD;
+}
+
+.notificationMessage {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.unreadDot {
+    height: 8px;
+    width: 8px;
+    background-color: #F65552;
+    border-radius: 50%;
+}
+
+.timeAgo {
+    color: #939CAD;
+    margin-top: 5px;
 }
